@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "GIS Driver License",
+    "description": "",
+    "home_page_url": "https://ggodfrey.gihub.io/publii",
+    "feed_url": "https://ggodfrey.gihub.io/publii/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "George Godfrey"
+    },
+    "items": [
+        {
+            "id": "https://ggodfrey.gihub.io/publii/qgis2web-plugin.html",
+            "url": "https://ggodfrey.gihub.io/publii/qgis2web-plugin.html",
+            "title": "QGIS2Web Plugin",
+            "summary": "The QGIS2Web plugin is the quickest way to create a leaflet, openlayers&hellip;",
+            "content_html": "<p>The QGIS2Web plugin is the quickest way to create a leaflet, openlayers or Mapbox GL JS web map.<br><br>Set everything up as you want it in QGIS, then open the plugin, choose a few settings options and it converts the project into a webmap.<br><br>Data is converted and saved into GeoJSON. It can't handle all formatting but it does quite a good job.<br><br>The downside is that the code generated is fairly complex so hard to edit retrospectively or add features that the plugin doesn't offer. It's way faster to set up the basics though.<br><br>Set up a GitHub pages repository and you can use GitHub to host your map. Then if you save the folder generated directly into your local github repository then you can use GitHub desktop to commit it straight to your online reposository.</p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://ggodfrey.gihub.io/publii/media/posts/1/London.PNG\" sizes=\"(max-width: 1024px) 100vw, 1024px\" srcset=\"https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-xs.PNG 300w ,https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-sm.PNG 480w ,https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-md.PNG 768w ,https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-lg.PNG 1024w\"  alt=\"London\" width=\"1606\" height=\"676\"></figure>",
+            "author": {
+                "name": "George Godfrey"
+            },
+            "tags": [
+            ],
+            "date_published": "2021-01-18T01:39:57+00:00",
+            "date_modified": "2021-01-18T01:39:57+00:00"
+        }
+    ]
+}
