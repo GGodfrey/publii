@@ -3,7 +3,7 @@
     <title>GIS Driver License</title>
     <link href="https://ggodfrey.gihub.io/publii/feed.xml" rel="self" />
     <link href="https://ggodfrey.gihub.io/publii" />
-    <updated>2021-01-18T01:39:57+00:00</updated>
+    <updated>2021-01-19T16:32:14+00:00</updated>
     <author>
         <name>George Godfrey</name>
     </author>
@@ -20,13 +20,436 @@
         <updated>2021-01-18T01:39:57+00:00</updated>
             <summary>
                 <![CDATA[
-                    The QGIS2Web plugin is the quickest way to create a leaflet, openlayers&hellip;
+                    The QGIS2Web plugin is the quickest way to create a leaflet, openlayers or Mapbox GL JS web map. Set everything up as you want it in QGIS, then open the plugin, choose a few settings options and it converts the project into a webmap. Data&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                 <p>The QGIS2Web plugin is the quickest way to create a leaflet, openlayers or Mapbox GL JS web map.<br><br>Set everything up as you want it in QGIS, then open the plugin, choose a few settings options and it converts the project into a webmap.<br><br>Data is converted and saved into GeoJSON. It can't handle all formatting but it does quite a good job.<br><br>The downside is that the code generated is fairly complex so hard to edit retrospectively or add features that the plugin doesn't offer. It's way faster to set up the basics though.<br><br>Set up a GitHub pages repository and you can use GitHub to host your map. Then if you save the folder generated directly into your local github repository then you can use GitHub desktop to commit it straight to your online reposository.</p>
-<figure class="post__image"><img loading="lazy"  src="https://ggodfrey.gihub.io/publii/media/posts/1/London.PNG" sizes="(max-width: 1024px) 100vw, 1024px" srcset="https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-xs.PNG 300w ,https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-sm.PNG 480w ,https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-md.PNG 768w ,https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-lg.PNG 1024w"  alt="London" width="1606" height="676"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://ggodfrey.gihub.io/publii/media/posts/1/London.PNG" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-xs.PNG 300w ,https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-sm.PNG 480w ,https://ggodfrey.gihub.io/publii/media/posts/1/responsive/London-md.PNG 768w"  alt="London" width="1606" height="676"></figure>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>CAD: Measure the length of multiple lines</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/cad-measure-the-length-of-multiple-lines.html"/>
+        <id>https://ggodfrey.gihub.io/publii/cad-measure-the-length-of-multiple-lines.html</id>
+
+        <updated>2021-01-19T16:32:14+00:00</updated>
+            <summary>
+                <![CDATA[
+                     TLEN LISP routine: AutoCAD doesn't have anything like that built in, but it's easily done with TLEN.lsp (Total LENgth of selected objects) http://www.turvill.com/t2/free_stuff/tlen.lsp If you're not familiar with how to use lisp, simply copy/paste (CTRL+V)&nbsp;ALL&nbsp;the text and characters in the above link into your&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p><a href="https://forums.autodesk.com/t5/autocad-forum/how-to-calculate-the-total-length-of-multiple-lines/td-p/5120514"><strong>TLEN LISP routine:</strong></a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>AutoCAD doesn't have anything like that built in, but it's easily done with TLEN.lsp (Total LENgth of selected objects)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>http://www.turvill.com/t2/free_stuff/tlen.lsp</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you're not familiar with how to use lisp, simply copy/paste (CTRL+V)&nbsp;<strong>ALL</strong>&nbsp;the text and characters in the above link into your command line and press Enter, then type TLEN into the command line and follow the command prompt (select the objects)&nbsp; Note using this method, the lisp is only loaded for the current session, if you want it to be a permanent feature, Add it to the Startup Suite or the acaddoc.lsp file.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Export to QGIS: </strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>QGIS is a good option if using AutoCAD LT where LISP doesn't work or if you want to see a spreadsheet to view more detail. In QGIS you can view an attribute table that shows which layer the features are from.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Save the drawing or part of as a .dxf</li>
+<li>Open in QGIS</li>
+<li>Use field calculator to add a virtual field and populate each row with $length</li>
+<li>Open the statistics panel to view the total length of all features or of all selected features</li>
+<li>For example select all features from a CAD layer using the LAYERS attribute</li>
+<li>For more detail such as summing the length for each layer; save as a spreadsheet and then open in Excel</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p></p>
+<p><!-- /wp:paragraph --></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>QGIS: Offsetting overlapping lines for bus map</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/qgis-offsetting-overlapping-lines-for-bus-map.html"/>
+        <id>https://ggodfrey.gihub.io/publii/qgis-offsetting-overlapping-lines-for-bus-map.html</id>
+
+        <updated>2021-01-19T16:32:14+00:00</updated>
+            <summary>
+                <![CDATA[
+                     Problem: I have a map of bus routes and in many places multiple routes overlap as they travel down the same roads. I wish to separate the overlapping sections so they are all visible, like a standard bus map. This needs to be an&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p>Problem: I have a map of bus routes and in many places multiple routes overlap as they travel down the same roads. I wish to separate the overlapping sections so they are all visible, like a standard bus map. This needs to be an automatic process using geometry generator so I don't have to manually edit the underlying data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I've not found a solution but these two post hint at possible solutions.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>https://gis.stackexchange.com/questions/239129/shifting-display-of-overlapping-lines-in-qgis</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>https://gis.stackexchange.com/questions/261654/automatic-bus-route-map-without-overlaps</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p></p>
+<p><!-- /wp:paragraph --></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>OSM Quick Search / Overpass API</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/osm-quick-search-overpass-api.html"/>
+        <id>https://ggodfrey.gihub.io/publii/osm-quick-search-overpass-api.html</id>
+
+        <updated>2021-01-19T16:32:14+00:00</updated>
+            <summary>
+                <![CDATA[
+                     Summary: QGIS plugin to download features from open street map. The task was to provide bus routes and schools data for a London Borough, to use within a project. My first thoughts were OS Open Data local for the schools and London data store&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p>Summary: QGIS plugin to download features from open street map.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The task was to provide bus routes and schools data for a London Borough, to use within a project. My first thoughts were OS Open Data local for the schools and London data store for the bus routes. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>A quick option was to use Open Street Map data for both. The advantage of this approach is that I can quickly download to memory layers the specific types of features I want, just for the area needed. The downside is that the data might not be accurate. I've certainly found in the past that the schools layer isn't perfect. Bus stops change over time and are more complex so might be off.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p> This can be achieved using the Quick OSM plugin in QGIS, which allows you to query the Overpass API website and download the results straight to QGIS memory layers.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":527,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2021/01/image-3.png"><figure class="wp-image-527"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/61/image-3.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-3-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-3-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-3-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Working out the correct tags to use is a bit hit and miss.  The quick query option provides drop down menus but there are loads of options. The quick The<a href="https://wiki.openstreetmap.org/wiki/Map_features#Route"> OSM website</a> has all tags listed. The extents can be limited using place names or layer extents in QGIS.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":523,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://wiki.openstreetmap.org/wiki/Map_features#Route"><figure class="wp-image-523"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/61/image-1.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-1-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-1-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-1-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>For complex queries you write a kind of code / query syntax.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":525,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2021/01/image-2.png"><figure class="wp-image-525"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/61/image-2.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-2-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-2-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/61/responsive/image-2-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Using the Linux terminal</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/using-the-linux-terminal.html"/>
+        <id>https://ggodfrey.gihub.io/publii/using-the-linux-terminal.html</id>
+
+        <updated>2021-01-19T16:32:14+00:00</updated>
+            <summary>
+                <![CDATA[
+                     Setting up Xubuntu has involved allot of use of the 'terminal' like the Windows command line but way more integrated into the everyday experience. Especially for installing software. Ctlr+Alt+T to open it Then types a command, or more likely copy and paste from a&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p>Setting up Xubuntu has involved allot of use of the 'terminal' like the Windows command line but way more integrated into the everyday experience. Especially for installing software.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ctlr+Alt+T to open it</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Then types a command, or more likely copy and paste from a website tutorial or forum. Copy is CTRL+SHIFT+C, paste is CTRL+SHIFT+V. Then press enter to execute it. It feels very opaque as nothing much happens. For example you can create a new folder using command "mk TEST", and there is no indication in the terminal that it worked despite the folder called test appearing in unless you type an actual command.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the example below I create a new folder and a new file. As per this introductory tutorial: https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":509,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2021/01/image.png"><figure class="wp-image-509"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/59/image.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/59/responsive/image-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/59/responsive/image-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/59/responsive/image-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The key use of the terminal seems to be to instahis and configure software. This is often a quick option compared with the graphical way for common software like Chrome. For more complex software like GeoServer or PostgresSQL database it becomes integral to the process.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The sudo command refers to acting as super user, apt is application and install installs. I got stumped by entering the password, nothing happens. Turns out passwords are hidden, you type, press enter and hope for the best.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There is the idea of repositories, lists of software available for download and install.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:syntaxhighlighter/code --></p>
+<pre class="wp-block-syntaxhighlighter-code"># Download software
+$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# Install
+$ sudo apt install ./google-chrome-stable_current_amd64.deb
+# Open
+$ google-chrome</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:paragraph --></p></p>
+<p><!-- /wp:paragraph --></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Moving to Linux</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/moving-to-linux.html"/>
+        <id>https://ggodfrey.gihub.io/publii/moving-to-linux.html</id>
+
+        <updated>2021-01-19T16:32:14+00:00</updated>
+            <summary>
+                <![CDATA[
+                     My personal laptop was bought just after I graduated in 2012. As a result its showing its age and struggling with the basic day to day tasks. So I was looking for ways to speed it up. In addittion, many higher level GIS tasks&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p>My personal laptop was bought just after I graduated in 2012. As a result its showing its age and struggling with the basic day to day tasks. So I was looking for ways to speed it up. In addittion, many higher level GIS tasks use the Lixux terminal, or are at least described in tutorials from this perspective.  So with these two motivations I decided to set up a dual boot linux install where I am able to choose between windows and linux, to test out the idea.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This proved to be more difficult than expected. Linux just has a much higher learning curve than windows, it expects you to work allot more out. I probably could have got there faster but I was being careful not to damage my existing windows set up and the data on the harddrive. As it turns out I destroyed the windows set up somehow but luckily retained the data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Below are a few pointers from my experience:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Distributons: Windows is a single product, if you want to install it you go straight to the windows download page. Linux however is a whole world of variants all built from a common core. So task one is to choose a distribution from the hundreds available. I chose Ubuntu as its the most high profile and apparently fairly user friendly. https://www.techradar.com/uk/best/best-linux-distros</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Then you select the flavour of Ubuntu, these are different 'desktop environments' which change  the appearance and the software which it comes with as standard. I was looking for something that runs well on my old under powered laptop. Xubuntu seems to be the happy middle ground between speed and a modernish look and feel. https://itsfoss.com/which-ubuntu-install/ </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Then we move to the install, instructions here: https://www.lifewire.com/guide-to-installing-xubuntu-linux-2202075. In summary:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>download xubuntu.iso   https://xubuntu.org/download/</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>download rufus software, this installs the 'installer' onto a usb stick</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Plug in usb, restart computer and straight away press F12 (or the equivalent on your machine) to open the boot loader menu. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Select the USB, likely at the bottom of the list</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Next you will get options to try or install Xubuntu. The try option runs the operating system directly from USB stick, when you turn off everything returns to normal.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>To install you need to consider partitions. Partitions are segments of your hard drive which behave as seperate drives. You will likely have a main partition and then another for your windows backup. There could be several more. You can create a new partition for Xubuntu by 'shrinking' the existing partition and using some of the empty space for a new partition. It is recomended you do this in advance using the windows tools.You need to consider the format and potentially seperate small partitions for swap and boot. This bit was frankly beyond me and I left allot to chance. Shrinking my main partition down to make room for a new 100GB partitition for Xubuntu. It seems 30Gb is the recomended minimum.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The installer asks you if you want to erase the disk (destroy your windows data) or something else. You get a simple looking slider which suggests you can shrink the windows partition to make space for a new Xubuntu install. However its all a bit vague and I was worried about it damaging my data. So I went for the advanced options. Selected my new partition and then was faced with a drop down for 'device for boot loader installation'. Some research shows this is basically the files the computer looks for at startup. Where to put it has some debate online. It seems for Windows10 era laptops its actually irrelevent but will likely use the top /sda option which I think is kind of the parent level to the child partitions below it.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>https://www.lifewire.com/guide-to-installing-xubuntu-linux-2202075</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/58/xubuntu-custom-partition-fcf597a2f05a44019923dd9235f53b78.jpg" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/58/responsive/xubuntu-custom-partition-fcf597a2f05a44019923dd9235f53b78-xs.jpg 300w ,https://ggodfrey.gihub.io/publii/media/posts/58/responsive/xubuntu-custom-partition-fcf597a2f05a44019923dd9235f53b78-sm.jpg 480w ,https://ggodfrey.gihub.io/publii/media/posts/58/responsive/xubuntu-custom-partition-fcf597a2f05a44019923dd9235f53b78-md.jpg 768w"  alt="Xubuntu custom partition" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>So far the results are good, its clean, simple, and much faster. I can still access my old data. The appearance is a bit clunky but that was the trade off for speed.The downside is in an initial test where I just ran Xubuntu without installing, Windows got corrupted. I'll reinstall at some point but for now its fine. Basic tasks also can take a bit of googling such as installing Zoom and Chrome. However I think its an ok learning curve. The key difference is that using the terminal is the default method for everything and the graphical interface is secondary.</p>
+<p><!-- /wp:paragraph --></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>ESRI Web Map Services Rest APIs</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/esri-web-map-services-rest-apis.html"/>
+        <id>https://ggodfrey.gihub.io/publii/esri-web-map-services-rest-apis.html</id>
+
+        <updated>2021-01-19T16:32:14+00:00</updated>
+            <summary>
+                <![CDATA[
+                     Have you ever looked at a web map or app and thought you'd love to be able to download the data it contains? I certainly have. With ESRI web apps luckily the data can be extracted. Using the Developer Tools function in Chrome or&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p>Have you ever looked at a web map or app and thought you'd love to be able to download the data it contains? I certainly have. With ESRI web apps luckily the data can be extracted.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Using the Developer Tools function in Chrome or the equivalent in other browsers we can see the source of each of the layers.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":471,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2020/11/image-4.png"><figure class="wp-image-471"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/53/image-4.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/53/responsive/image-4-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/53/responsive/image-4-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/53/responsive/image-4-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Right click any of these layers, copy the address and past in back into the search bar. Then work your way back up the file tree till you find get to the top level of the organisations rest API. Each individual layers address can then be copied into QGIS or similar to load a WMS or the API used to extract information.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":473,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2020/11/image-5.png"><figure class="wp-image-473"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/53/image-5.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/53/responsive/image-5-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/53/responsive/image-5-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/53/responsive/image-5-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>QGIS: Reverse Line Tool</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/qgis-reverse-line-tool.html"/>
+        <id>https://ggodfrey.gihub.io/publii/qgis-reverse-line-tool.html</id>
+
+        <updated>2021-01-19T16:32:13+00:00</updated>
+            <summary>
+                <![CDATA[
+                     Especially useful when working with offset line styles and labels 
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p>Especially useful when working with offset line styles and labels</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":288,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><figure class="wp-image-288"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/48/image.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/48/responsive/image-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/48/responsive/image-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/48/responsive/image-md.png 768w"  alt=""  /></figure></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"id":292,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><figure class="wp-image-292"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/48/image-2.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/48/responsive/image-2-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/48/responsive/image-2-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/48/responsive/image-2-md.png 768w"  alt=""  /></figure></figure>
+<p><!-- /wp:image --></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>QGIS: Dims- post 2</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/qgis-dims-post-2.html"/>
+        <id>https://ggodfrey.gihub.io/publii/qgis-dims-post-2.html</id>
+
+        <updated>2021-01-19T16:32:14+00:00</updated>
+            <summary>
+                <![CDATA[
+                     Following on from my first post on creating CAD style 'dims' in QGIS. How to adjust the dim so that it appears as two lines with a space for the number? rather than a single line The solution is to use a 'simple line'&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p>Following on from my first post on creating CAD style 'dims' in QGIS.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>How to adjust the dim so that it appears as two lines with a space for the number?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":426,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2020/11/image.png"><figure class="wp-image-426"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/51/image.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>rather than a single line </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":428,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2020/11/image-1.png"><figure class="wp-image-428"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/51/image-1.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-1-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-1-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-1-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The solution is to use a 'simple line' with a custom dash pattern, combined with a user defined formula.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The custom dash pattern takes a value formatted like this <em>4;5;5</em> , with each number representing a distance; alternating dash then gap. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The expression used has three segments, the first is half the length of the line minus 0.5 metres, then a gap of 1 metre and then again half the length of the line minus 0.5 metres.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>(( $length /2) -0.5) || ';1;' || (( $length /2) -0.5)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":431,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2020/11/image-3.png"><figure class="wp-image-431"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/51/image-3.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-3-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-3-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-3-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Previously I had used a double headed arrow style for the line. This wouldn't accept a dash pattern so I changed tack and used a simple line combined with triangular marker symbols, placed at the end of the lines and rotated to look like arrow heads.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The result looks like this:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":429,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2020/11/image-2.png"><figure class="wp-image-429"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/51/image-2.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-2-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-2-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/51/responsive/image-2-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>QGIS: Datestamps on print composers</title>
+        <author>
+            <name>George Godfrey</name>
+        </author>
+        <link href="https://ggodfrey.gihub.io/publii/qgis-datestamps-on-print-composers.html"/>
+        <id>https://ggodfrey.gihub.io/publii/qgis-datestamps-on-print-composers.html</id>
+
+        <updated>2021-01-19T16:32:13+00:00</updated>
+            <summary>
+                <![CDATA[
+                     I have a print composer that use regularly to create plans for engineers to print out and use on site. Lists of addresses get geocoded and then batches of sheets printed out using Atlas but thats another story. Why its not done on tablets&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><!-- wp:paragraph --></p>
+<p>I have a print composer that use regularly to create plans for engineers to print out and use on site. Lists of addresses get geocoded and then batches of sheets printed out using Atlas but thats another story. Why its not done on tablets is another story.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The composer has a date stamp which I had been manually updating, not even considering that this should be automated. Now it is using an expression in a text box.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":413,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2020/10/image-16.png"><figure class="wp-image-413"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/46/image-16.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/46/responsive/image-16-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/46/responsive/image-16-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/46/responsive/image-16-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>My first thought was this formula but it didn't seem to auto update:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>              <strong>day_of_week(</strong> <em>now</em>() <strong>)</strong>    ||'-' ||   <strong>month(</strong> <em>now</em>() <strong>)</strong>   ||'-' ||   <strong>year(</strong> <em>now</em>() <strong>)</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The second iteration was: </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>               <strong>format_date</strong>(       <em>now</em>(),       'dd/MMM/yy'       )</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The format can be altered as per the info provided on the right of the expression dialogue, although you seem limited to / as the delimiter.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":411,"sizeSlug":"large","linkDestination":"media"} --></p>
+<figure class="wp-block-image size-large"><a href="https://gisdriverslicence.files.wordpress.com/2020/10/image-15.png"><figure class="wp-image-411"><img loading="lazy" src="https://ggodfrey.gihub.io/publii/media/posts/46/image-15.png" sizes="(min-width: 61.3125em) 50vw, 100vw" srcset="https://ggodfrey.gihub.io/publii/media/posts/46/responsive/image-15-xs.png 300w ,https://ggodfrey.gihub.io/publii/media/posts/46/responsive/image-15-sm.png 480w ,https://ggodfrey.gihub.io/publii/media/posts/46/responsive/image-15-md.png 768w"  alt=""  /></figure></a></figure>
+<p><!-- /wp:image --></p>
+
             ]]>
         </content>
     </entry>
